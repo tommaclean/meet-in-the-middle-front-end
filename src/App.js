@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import LoginPage from './LoginPage'
+import SignupPage from './SignupPage'
+import MainPage from './MainPage'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    page: 'login'
+  }
+
+  redirect = (page) => {
+    this.setState({page: page})
+  }
+
+  handleLogOut = () => {
+    this.setState({ page: 'login'})
+  }
+  componentDidMount() {
+    if (localStorage.token) {
+      this.redirect('main')
+    }
+  }
+
+  render () {
+    switch(this.state.page) {
+      case 'login':
+        return <LoginPage redirect={this.redirect}/>
+      case 'signup':
+        return <SignupPage />
+      case 'main':
+        return <MainPage isLoggedIn={this.handleLogOut}/>
+      default:
+        return <LoginPage />
+    }
+  }
 }
 
 export default App;

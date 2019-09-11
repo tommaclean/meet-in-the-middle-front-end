@@ -23,6 +23,57 @@
   color: #61dafb;
 }
 
+.container {
+  display: flex; /* or inline-flex */
+  justify-content: space-around;
+}
+
+#root > div > div:nth-child(2) > div.six.wide.column {
+  display: flex;
+  align-items: center;
+}
+
+#root > div > div.one.column.row.ui.top.fixed.menu > div {
+  height: 60px;
+}
+
+#root {
+  padding-top: 45px;
+}
+
+.dropdown {
+  width: 80%;
+}
+
+.ui.blue.button {
+  width: 50%;
+}
+.ui.form {
+  width: 100;
+  padding-bottom: 15px;
+}
+.ui.celled.grid {
+  width: 100%;
+}
+
+.ui.items {
+  background: #F2F2F2;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.meetupSpot {
+  background: #F2F2F2;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
