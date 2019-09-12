@@ -8,18 +8,17 @@ import ProfilePage from './ProfilePage'
 class ProfileModal extends React.Component {
   render(){
     const pastMeetups = this.props.currentUserMeetups.reverse().map(userMeetup => {
-      return <PastMeetup key={userMeetup.meetup.id} id={userMeetup.id} meetup={userMeetup} name={userMeetup.meetup.name} vicinity={userMeetup.meetup.vicinity} handleFavoriteMeetup={this.props.handleFavoriteMeetup} />
+      return <PastMeetup key={userMeetup.meetup.id} id={userMeetup.meetup.id} meetup={userMeetup} name={userMeetup.meetup.name} vicinity={userMeetup.meetup.vicinity} handleFavoriteMeetup={this.props.handleFavoriteMeetup}/>
     })
-
-    const userFavs = this.props.currentUserMeetupFavs.reverse().map((fav, index) => {
-      return <MeetupFav key={index} id={index + 1} fav={fav} name={fav.name} vicinity={fav.vicinity} handleDeleteFav={this.props.handleDeleteFav}/>
+    const userFavs = this.props.currentUserMeetupFavs.reverse().map(fav => {
+      return <MeetupFav key={fav.id} fav={fav} name={fav.name} vicinity={fav.vicinity} handleDeleteFav={this.props.handleDeleteFav} icon={fav.icon}/>
     })
 
     const panes = [
       {
         menuItem: 'Past Meetups',
         render: () => <Tab.Pane attached={false}>
-          <Header>{this.props.currentUser.username}'s Past Meetups</Header>
+          <Header>Past Meetups</Header>
             <Item.Group>
               { pastMeetups }
             </Item.Group>
@@ -27,7 +26,7 @@ class ProfileModal extends React.Component {
       },
       {
         menuItem: 'Favorite Meetups',
-        render: () => <Tab.Pane attached={false}><h1 className="ui header">Favorite Meetups</h1>
+        render: () => <Tab.Pane attached={false}><Header>Favorite Meetups</Header>
         <Item.Group>
         { userFavs }
         </Item.Group>
@@ -39,7 +38,7 @@ class ProfileModal extends React.Component {
           <Modal.Header>{this.props.currentUser.username}'s Profile</Modal.Header>
               <Modal.Content image scrolling>
                 <Image size='medium' src='meet-in-the-middle-logo.jpg' wrapped />
-                  <Tab menu={{ pointing: true }} panes={panes} />
+                  <Tab menu={{ pointing: true }} panes={panes}/>
               </Modal.Content>
               <Modal.Actions>
                 <Button primary onClick={this.props.handleProfileClick}>

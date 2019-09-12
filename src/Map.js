@@ -1,6 +1,6 @@
 import React from 'react'
 import ResultCard from './ResultCard'
-import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow, Icon } from 'react-google-maps';
+import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
 class Map extends React.Component {
 
@@ -32,7 +32,7 @@ class Map extends React.Component {
     }
 
   render(){
-    
+
     const WrappedMap = withScriptjs(withGoogleMap(this.createMap))
     return(
       <div style={{ width: '73vw', height: '70vh' }}>

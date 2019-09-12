@@ -9,7 +9,7 @@ const ConfirmationModal = (props) => (
       <Modal.Description>
         <Header>{ props.meetupSelection.name }</Header>
           { props.meetupSelection.vicinity }<br />
-          <Button>Send to Phone</Button>
+        
         <Button onClick={props.closeConfirmationModal}>Close</Button>
       </Modal.Description>
     </Modal.Content>

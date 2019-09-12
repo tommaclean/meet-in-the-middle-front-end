@@ -42,7 +42,7 @@ class ProfilePage extends Component {
         </Tab.Pane> },
       ]
 
-      console.log(this.props);
+    
     return (
       <div>
         <Tab panes={panes} />

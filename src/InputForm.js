@@ -24,12 +24,10 @@ class InputForm extends React.Component {
   }
 
   handleAddressUserChange = (e, data) => {
-    console.log(data.value, "Handle Address User Change")
     this.setState({ [data.name]: data.value })
   }
 
   handleAddressTypingChange = (e) => {
-    console.log(e.target.value, "Handle Address Typing Change" )
     this.setState({ [e.target.name]: e.target.value })
   }
 
@@ -118,10 +116,13 @@ class InputForm extends React.Component {
       this.setState({ midpoint: [...this.state.midpoint, lngAvg] })
 
       this.props.handlePlacesFetch(this.state)
+      this.handleResetState()
     }
   }
 
-
+  handleResetState = (e) => {
+    this.setState({ address1: "", address2: "", address3: "" })
+  }
   render(){
     const allUsernames = this.props.allUsers.map(user => ({
       key: user.id,

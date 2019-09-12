@@ -63,7 +63,7 @@ class LoginPage extends Component {
                 </Segment>
               </Form>
               <Message>
-                New to us? <a href='#'>Sign Up</a>
+                New to us? <a href='#'>TOO BAD. Not open for Signups at this time.</a>
               </Message>
             </Grid.Column>
           </Grid>
