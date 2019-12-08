@@ -40,13 +40,11 @@ class MainPage extends React.Component {
     }
 
   handleResultClick = (e) => {
-    console.log(e, "handle MAP MARKER click")
     this.setState({ selectedResult: e })
 
   }
 
   handleMeetupSelection = (e) => {
-    console.log(e, "handle RESULT click");
     this.setState({ meetupSelection: e, selectedResult: e.id })
   }
 
@@ -65,7 +63,6 @@ class MainPage extends React.Component {
   }
 
   handleFavoriteMeetup = (selectedMeetupToFav) => {
-    console.log(selectedMeetupToFav)
     fetch(`http://localhost:3000/single_user/add_meetup_fav`, {
       method: 'POST',
       headers: {
@@ -82,8 +79,6 @@ class MainPage extends React.Component {
   }
 
   handleDeleteFav = (selectedMeetupToDel) => {
-    console.log(selectedMeetupToDel)
-
     fetch(`http://localhost:3000/single_user/meetup_favs`, {
       method: 'DELETE',
       headers: {
@@ -92,8 +87,8 @@ class MainPage extends React.Component {
         'Accept':'application/json'
       },
       body: JSON.stringify({
-        user_meetup_fav_id: selectedMeetupToDel.fav.id,
-        user_id: this.state.currentUser.id
+        user_id: this.state.currentUser.id,
+        user_meetup_fav_id: selectedMeetupToDel.fav.id
       })
 
     })

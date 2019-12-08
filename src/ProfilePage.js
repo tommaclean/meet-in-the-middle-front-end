@@ -8,7 +8,7 @@ class ProfilePage extends Component {
   render () {
     const pastMeetups = () => {
       if (this.props.currentUserMeetups.length) {
-        return this.props.currentUserMeetups.reverse().map(userMeetup => {
+        return this.props.currentUserMeetups.map(userMeetup => {
           return <PastMeetup key={userMeetup.meetup.id} id={userMeetup.meetup.id} meetup={userMeetup} name={userMeetup.meetup.name} vicinity={userMeetup.meetup.vicinity} handleFavoriteMeetup={this.props.handleFavoriteMeetup}/>
         })
       }
@@ -17,7 +17,7 @@ class ProfilePage extends Component {
 
     const userFavs = () => {
       if (this.props.currentUserMeetupFavs.length) {
-        return this.props.currentUserMeetupFavs.reverse().map(fav => {
+        return this.props.currentUserMeetupFavs.map(fav => {
           return <MeetupFav key={fav.id} fav={fav} name={fav.name} vicinity={fav.vicinity} handleDeleteFav={this.props.handleDeleteFav} icon={fav.icon}/>
         })
     }
