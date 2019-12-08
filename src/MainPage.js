@@ -92,7 +92,8 @@ class MainPage extends React.Component {
         'Accept':'application/json'
       },
       body: JSON.stringify({
-        id: selectedMeetupToDel.fav.id
+        user_meetup_fav_id: selectedMeetupToDel.fav.id,
+        user_id: this.state.currentUser.id
       })
 
     })

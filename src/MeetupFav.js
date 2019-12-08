@@ -3,6 +3,7 @@ import { Item } from  'semantic-ui-react'
 
 class MeetupFav extends React.Component {
   render(){
+    console.log(this.props)
     return(
       <Item>
         <Item.Image size='mini' src='https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png' />
