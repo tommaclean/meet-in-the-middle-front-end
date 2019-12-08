@@ -24,22 +24,6 @@ class ProfilePage extends Component {
     return null
   }
     const panes = [
-      // {
-      //   menuItem: 'Profile Info',
-      //   render: () => <Tab.Pane><h1 className="ui header">Profile Page</h1>
-      //     Hi {this.props.currentUser.username}!
-      //     <Form>
-      //     <Form.Field>
-      //     <label>Name</label>
-      //     <input placeholder={this.props.currentUser.username} />
-      //     </Form.Field>
-      //     <Form.Field>
-      //     <label>Address</label>
-      //     <input placeholder={this.props.currentUser.address} />
-      //     </Form.Field>
-      //     <Button type='submit'>Update Profile</Button>
-      //     </Form></Tab.Pane>,
-      //   },
         { menuItem: 'Past Meetups', render: () => <Tab.Pane><h1 className="ui header">Past Meetups</h1>
         <Item.Group>
         { pastMeetups() }
