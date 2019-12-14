@@ -36,6 +36,7 @@ class LoginPage extends Component {
       <div className="loginPage">
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle' >
             <Grid.Column style={{ maxWidth: 450 }}>
+                <Header as='h1' color='blue' textAlign='center'>MeetInTheMiddle</Header>
               <Header as='h2' color='blue' textAlign='center'>
                 <Image src='meet-in-the-middle-logo.jpg' /> Log-in to your account
               </Header>
