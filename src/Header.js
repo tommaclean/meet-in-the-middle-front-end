@@ -22,15 +22,15 @@ class Header extends React.Component {
           <a className="item aligned right" onClick={this.props.handleLogOut}>Log-Out</a>
           <a className="item" onClick={this.handleProfileClick}>
           <i className="user icon" ></i>
-          <ProfileModal
-          handleProfileClick={this.handleProfileClick}
-          modalOpen={this.state.modalOpen}
-          currentUser={this.props.currentUser}
-          currentUserMeetups={this.props.currentUserMeetups}
-          currentUserMeetupFavs={this.props.currentUserMeetupFavs}
-          handleFavoriteMeetup={this.props.handleFavoriteMeetup}
-          handleDeleteFav={this.props.handleDeleteFav}
-          />
+            <ProfileModal
+              handleProfileClick={this.handleProfileClick}
+              modalOpen={this.state.modalOpen}
+              currentUser={this.props.currentUser}
+              currentUserMeetups={this.props.currentUserMeetups}
+              currentUserMeetupFavs={this.props.currentUserMeetupFavs}
+              handleFavoriteMeetup={this.props.handleFavoriteMeetup}
+              handleDeleteFav={this.props.handleDeleteFav}
+            />
           { this.props.currentUser.username }</a>
         </div>
     )
