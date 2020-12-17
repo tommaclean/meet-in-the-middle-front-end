@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/tommaclean/meet-in-the-middle-front-end/master/public/meet-in-the-middle-logo.jpg" width="250" height="250" />
+<img src="https://i.imgur.com/BqXmkN4.png" />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
